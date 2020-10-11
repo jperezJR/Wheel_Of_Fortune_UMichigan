@@ -21,4 +21,24 @@ class WOFPlayer():
 
     def __str__(self):
         return '{} (${})'.format(self.name, self.prizeMoney)
+        
+
+# Write the WOFHumanPlayer class definition (part B) here
+
+class WOFHumanPlayer(WOFPlayer):
+
+    def getMove(self, category, obscuredPhrase, guessed):
+        prompt = """
+        {} has ${}\n
+        \n
+        Category: {}
+        Phrase: {}
+        Guessed: {}
+        \n
+        Guess a letter, phrase, or type 'exit' or 'pass':""".format(self.name, self.prizeMoney, category, obscuredPhrase, guessed)
+        
+        userinp = input(prompt)
+        return userinp
+
+
 
